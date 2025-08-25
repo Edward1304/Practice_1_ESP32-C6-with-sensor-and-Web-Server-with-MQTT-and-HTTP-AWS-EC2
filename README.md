@@ -176,19 +176,11 @@ Practice_1_ESP32-C6-with-sensor-and-Web-Server-with-MQTT-and-HTTP-AWS-EC2/
 
 La interfaz web ahora está separada en archivos independientes:
 
-### **Frontend :**
-- ✅ **HTML5 Semántico**: Estructura clara y accesible
-- ✅ **CSS3 Avanzado**: Variables CSS, Grid, Flexbox, animaciones
-- ✅ **JavaScript ES6+**: Fetch API, async/await, manejo de errores
-- ✅ **Responsive Design**: Funciona en móviles, tablets y desktop
-- ✅ **PWA-Ready**: Preparado para Progressive Web App
-
 ### **Tecnologías Web Utilizadas:**
 - **SPIFFS**: Sistema de archivos embebido para servir archivos estáticos
 - **HTTP Server**: Servidor web integrado en ESP32
 - **REST API**: Endpoints JSON para comunicación con frontend
-- **CSS Grid/Flexbox**: Layout moderno y responsive
-- **JavaScript Vanilla**: Sin dependencias externas
+- **JavaScript**: Sin dependencias externas
 
 ## 🔌 Conexiones de Hardware
 
