@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32-C6 DHT11 Sensor Monitor</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌡️</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> ESP32-C6 DHT11 Sensor Monitor</h1>
+            <div class="status-indicator" id="connection-status">
+                <span class="status-dot online"></span>
+                <span>Sistema Online - DHT11 en GPIO4 - Enviando a Mosquitto EC2</span>
+            </div>
+        </header>
+
+        <div class="sensor-grid">
+            <div class="sensor-card temperature-card">
+                <div class="sensor-icon">🌡️</div>
+                <div class="sensor-info">
+                    <div class="label">Temperatura (DHT11)</div>
+                    <div class="value" id="temperature">--°C</div>
+                </div>
+            </div>
+
+            <div class="sensor-card humidity-card">
+                <div class="sensor-icon"></div>
+                <div class="sensor-info">
+                    <div class="label">Humedad Relativa (DHT11)</div>
+                    <div class="value" id="humidity">--%</div>
+                </div>
+            </div>
+
+            <div class="sensor-card status-card">
+                <div class="sensor-icon"></div>
+                <div class="sensor-info">
+                    <div class="label">Sensor Válido</div>
+                    <div class="value" id="sensor_valid">---</div>
+                </div>
+            </div>
+
+            <div class="sensor-card error-card">
+                <div class="sensor-icon"></div>
+                <div class="sensor-info">
+                    <div class="label">Errores de Lectura</div>
+                    <div class="value" id="error_count">---</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timestamp-card">
+            <div class="label"> Última Actualización</div>
+            <div class="value" id="timestamp">---</div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-primary" onclick="refreshData()">
+                 Actualizar Datos
+            </button>
+            <button class="btn btn-secondary" onclick="sendToAWS()">
+                 Enviar a EC2
+            </button>
+        </div>
+
+        <div class="api-section">
+            <h3> API Endpoints</h3>
+            <div class="api-grid">
+                <a href="/api/sensor" class="api-link" target="_blank">
+                     Datos del DHT11 (JSON)
+                </a>
+                <a href="/api/status" class="api-link" target="_blank">
+                     Estado del Sistema
+                </a>
+                <div class="api-link" onclick="sendToAWS()">
+                     Envío Manual a EC2
+                </div>
+            </div>
+        </div>
+
+        <div class="connection-info">
+            <h3> Información de Conexión</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Sensor:</strong> DHT11 en GPIO4
+                </div>
+                <div class="info-item">
+                    <strong>MQTT Broker:</strong> ec2-13-220-220-130.compute-1.amazonaws.com:1883
+                </div>
+                <div class="info-item">
+                    <strong>WebSocket:</strong> Puerto 9001
+                </div>
+                <div class="info-item">
+                    <strong>Modo:</strong> Autenticación habilitada
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
