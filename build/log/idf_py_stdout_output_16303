@@ -1,0 +1,792 @@
+[1/12] cd /home/edwardv/practices_iot/practices_1/build/esp-idf/main && /home/edwardv/.espressif/python_env/idf5.2_py3.12_env/bin/python /home/edwardv/esp/esp-idf/components/spiffs/spiffsgen.py 0xf0000 /home/edwardv/practices_iot/practices_1/web /home/edwardv/practices_iot/practices_1/build/storage.bin --page-size=256 --obj-name-len=32 --meta-len=4 --use-magic --use-magic-len
+[2/12] Performing build step for 'bootloader'
+[1/1] cd /home/edwardv/practices_iot/practices_1/build/bootloader/esp-idf/esptool_py && /home/edwardv/.espressif/python_env/idf5.2_py3.12_env/bin/python /home/edwardv/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/edwardv/practices_iot/practices_1/build/bootloader/bootloader.bin
+Bootloader binary size 0x5440 bytes. 0x2bc0 bytes (34%) free.
+[3/12] No install step for 'bootloader'
+[4/12] Completed 'bootloader'
+[5/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[6/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/mqtt_client.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/mqtt_client.c.obj 
+/home/edwardv/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/riscv32-esp-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.2\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/edwardv/practices_iot/practices_1/build/config -I/home/edwardv/practices_iot/practices_1/main -I/home/edwardv/esp/esp-idf/components/newlib/platform_include -I/home/edwardv/esp/esp-idf/components/freertos/config/include -I/home/edwardv/esp/esp-idf/components/freertos/config/include/freertos -I/home/edwardv/esp/esp-idf/components/freertos/config/riscv/include -I/home/edwardv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/edwardv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/include -I/home/edwardv/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/include/freertos -I/home/edwardv/esp/esp-idf/components/freertos/esp_additions/include -I/home/edwardv/esp/esp-idf/components/esp_hw_support/include -I/home/edwardv/esp/esp-idf/components/esp_hw_support/include/soc -I/home/edwardv/esp/esp-idf/components/esp_hw_support/include/soc/esp32c6 -I/home/edwardv/esp/esp-idf/components/esp_hw_support/port/esp32c6/. -I/home/edwardv/esp/esp-idf/components/esp_hw_support/port/esp32c6/private_include -I/home/edwardv/esp/esp-idf/components/heap/include -I/home/edwardv/esp/esp-idf/components/log/include -I/home/edwardv/esp/esp-idf/components/soc/include -I/home/edwardv/esp/esp-idf/components/soc/esp32c6 -I/home/edwardv/esp/esp-idf/components/soc/esp32c6/include -I/home/edwardv/esp/esp-idf/components/hal/platform_port/include -I/home/edwardv/esp/esp-idf/components/hal/esp32c6/include -I/home/edwardv/esp/esp-idf/components/hal/include -I/home/edwardv/esp/esp-idf/components/esp_rom/include -I/home/edwardv/esp/esp-idf/components/esp_rom/include/esp32c6 -I/home/edwardv/esp/esp-idf/components/esp_rom/esp32c6 -I/home/edwardv/esp/esp-idf/components/esp_common/include -I/home/edwardv/esp/esp-idf/components/esp_system/include -I/home/edwardv/esp/esp-idf/components/esp_system/port/soc -I/home/edwardv/esp/esp-idf/components/esp_system/port/include/riscv -I/home/edwardv/esp/esp-idf/components/esp_system/port/include/private -I/home/edwardv/esp/esp-idf/components/riscv/include -I/home/edwardv/esp/esp-idf/components/lwip/include -I/home/edwardv/esp/esp-idf/components/lwip/include/apps -I/home/edwardv/esp/esp-idf/components/lwip/include/apps/sntp -I/home/edwardv/esp/esp-idf/components/lwip/lwip/src/include -I/home/edwardv/esp/esp-idf/components/lwip/port/include -I/home/edwardv/esp/esp-idf/components/lwip/port/freertos/include -I/home/edwardv/esp/esp-idf/components/lwip/port/esp32xx/include -I/home/edwardv/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/edwardv/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/edwardv/esp/esp-idf/components/esp_wifi/include -I/home/edwardv/esp/esp-idf/components/esp_wifi/wifi_apps/include -I/home/edwardv/esp/esp-idf/components/esp_event/include -I/home/edwardv/esp/esp-idf/components/esp_phy/include -I/home/edwardv/esp/esp-idf/components/esp_phy/esp32c6/include -I/home/edwardv/esp/esp-idf/components/esp_netif/include -I/home/edwardv/esp/esp-idf/components/esp_http_server/include -I/home/edwardv/esp/esp-idf/components/http_parser -I/home/edwardv/esp/esp-idf/components/esp_http_client/include -I/home/edwardv/esp/esp-idf/components/mqtt/esp-mqtt/include -I/home/edwardv/esp/esp-idf/components/tcp_transport/include -I/home/edwardv/esp/esp-idf/components/esp-tls -I/home/edwardv/esp/esp-idf/components/esp-tls/esp-tls-crypto -I/home/edwardv/esp/esp-idf/components/mbedtls/port/include -I/home/edwardv/esp/esp-idf/components/mbedtls/mbedtls/include -I/home/edwardv/esp/esp-idf/components/mbedtls/mbedtls/library -I/home/edwardv/esp/esp-idf/components/mbedtls/esp_crt_bundle/include -I/home/edwardv/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/everest/include -I/home/edwardv/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m -I/home/edwardv/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -I/home/edwardv/esp/esp-idf/components/esp_timer/include -I/home/edwardv/esp/esp-idf/components/nvs_flash/include -I/home/edwardv/esp/esp-idf/components/spi_flash/include -I/home/edwardv/esp/esp-idf/components/esp_partition/include -I/home/edwardv/esp/esp-idf/components/json/cJSON -I/home/edwardv/esp/esp-idf/components/driver/include -I/home/edwardv/esp/esp-idf/components/driver/deprecated -I/home/edwardv/esp/esp-idf/components/driver/analog_comparator/include -I/home/edwardv/esp/esp-idf/components/driver/dac/include -I/home/edwardv/esp/esp-idf/components/driver/gpio/include -I/home/edwardv/esp/esp-idf/components/driver/gptimer/include -I/home/edwardv/esp/esp-idf/components/driver/i2c/include -I/home/edwardv/esp/esp-idf/components/driver/i2s/include -I/home/edwardv/esp/esp-idf/components/driver/ledc/include -I/home/edwardv/esp/esp-idf/components/driver/mcpwm/include -I/home/edwardv/esp/esp-idf/components/driver/parlio/include -I/home/edwardv/esp/esp-idf/components/driver/pcnt/include -I/home/edwardv/esp/esp-idf/components/driver/rmt/include -I/home/edwardv/esp/esp-idf/components/driver/sdio_slave/include -I/home/edwardv/esp/esp-idf/components/driver/sdmmc/include -I/home/edwardv/esp/esp-idf/components/driver/sigma_delta/include -I/home/edwardv/esp/esp-idf/components/driver/spi/include -I/home/edwardv/esp/esp-idf/components/driver/temperature_sensor/include -I/home/edwardv/esp/esp-idf/components/driver/touch_sensor/include -I/home/edwardv/esp/esp-idf/components/driver/twai/include -I/home/edwardv/esp/esp-idf/components/driver/uart/include -I/home/edwardv/esp/esp-idf/components/driver/usb_serial_jtag/include -I/home/edwardv/esp/esp-idf/components/esp_pm/include -I/home/edwardv/esp/esp-idf/components/esp_ringbuf/include -I/home/edwardv/esp/esp-idf/components/spiffs/include -march=rv32imac_zicsr_zifencei  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -nostartfiles -Og -fno-shrink-wrap -fmacro-prefix-map=/home/edwardv/practices_iot/practices_1=. -fmacro-prefix-map=/home/edwardv/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/mqtt_client.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/mqtt_client.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/mqtt_client.c.obj -c /home/edwardv/practices_iot/practices_1/main/mqtt_client.c
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:20:8: error: unknown type name 'esp_mqtt_client_handle_t'
+   20 | static esp_mqtt_client_handle_t mqtt_client = NULL;
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:20:47: warning: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+   20 | static esp_mqtt_client_handle_t mqtt_client = NULL;
+      |                                               ^~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c: In function 'mqtt_event_handler':
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:24:5: error: unknown type name 'esp_mqtt_event_handle_t'; did you mean 'esp_etm_event_handle_t'?
+   24 |     esp_mqtt_event_handle_t event = event_data;
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+      |     esp_etm_event_handle_t
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:24:37: warning: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+   24 |     esp_mqtt_event_handle_t event = event_data;
+      |                                     ^~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:25:5: error: unknown type name 'esp_mqtt_client_handle_t'; did you mean 'esp_etm_event_handle_t'?
+   25 |     esp_mqtt_client_handle_t client = event->client;
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+      |     esp_etm_event_handle_t
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:25:44: error: invalid type argument of '->' (have 'int')
+   25 |     esp_mqtt_client_handle_t client = event->client;
+      |                                            ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:28:10: error: 'MQTT_EVENT_CONNECTED' undeclared (first use in this function)
+   28 |     case MQTT_EVENT_CONNECTED:
+      |          ^~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:28:10: note: each undeclared identifier is reported only once for each function it appears in
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:33:9: error: implicit declaration of function 'esp_mqtt_client_subscribe' [-Werror=implicit-function-declaration]
+   33 |         esp_mqtt_client_subscribe(client, "esp32/dht11/commands", 0);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:36:9: error: implicit declaration of function 'esp_mqtt_client_publish' [-Werror=implicit-function-declaration]
+   36 |         esp_mqtt_client_publish(client, MQTT_TOPIC_STATUS, "online", 0, 1, 1);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:39:10: error: 'MQTT_EVENT_DISCONNECTED' undeclared (first use in this function)
+   39 |     case MQTT_EVENT_DISCONNECTED:
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:44:10: error: 'MQTT_EVENT_SUBSCRIBED' undeclared (first use in this function)
+   44 |     case MQTT_EVENT_SUBSCRIBED:
+      |          ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/edwardv/practices_iot/practices_1/main/mqtt_client.c:12:
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:45:56: error: invalid type argument of '->' (have 'int')
+   45 |         ESP_LOGI(TAG, "MQTT Suscrito, msg_id=%d", event->msg_id);
+      |                                                        ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:436:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:45:9: note: in expansion of macro 'ESP_LOGI'
+   45 |         ESP_LOGI(TAG, "MQTT Suscrito, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:45:56: error: invalid type argument of '->' (have 'int')
+   45 |         ESP_LOGI(TAG, "MQTT Suscrito, msg_id=%d", event->msg_id);
+      |                                                        ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:437:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  437 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:45:9: note: in expansion of macro 'ESP_LOGI'
+   45 |         ESP_LOGI(TAG, "MQTT Suscrito, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:45:56: error: invalid type argument of '->' (have 'int')
+   45 |         ESP_LOGI(TAG, "MQTT Suscrito, msg_id=%d", event->msg_id);
+      |                                                        ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:438:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  438 |         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:45:9: note: in expansion of macro 'ESP_LOGI'
+   45 |         ESP_LOGI(TAG, "MQTT Suscrito, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:45:56: error: invalid type argument of '->' (have 'int')
+   45 |         ESP_LOGI(TAG, "MQTT Suscrito, msg_id=%d", event->msg_id);
+      |                                                        ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:439:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  439 |         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:45:9: note: in expansion of macro 'ESP_LOGI'
+   45 |         ESP_LOGI(TAG, "MQTT Suscrito, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:45:56: error: invalid type argument of '->' (have 'int')
+   45 |         ESP_LOGI(TAG, "MQTT Suscrito, msg_id=%d", event->msg_id);
+      |                                                        ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:440:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  440 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:45:9: note: in expansion of macro 'ESP_LOGI'
+   45 |         ESP_LOGI(TAG, "MQTT Suscrito, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:48:10: error: 'MQTT_EVENT_UNSUBSCRIBED' undeclared (first use in this function)
+   48 |     case MQTT_EVENT_UNSUBSCRIBED:
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:49:58: error: invalid type argument of '->' (have 'int')
+   49 |         ESP_LOGI(TAG, "MQTT Desuscrito, msg_id=%d", event->msg_id);
+      |                                                          ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:436:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:49:9: note: in expansion of macro 'ESP_LOGI'
+   49 |         ESP_LOGI(TAG, "MQTT Desuscrito, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:49:58: error: invalid type argument of '->' (have 'int')
+   49 |         ESP_LOGI(TAG, "MQTT Desuscrito, msg_id=%d", event->msg_id);
+      |                                                          ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:437:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  437 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:49:9: note: in expansion of macro 'ESP_LOGI'
+   49 |         ESP_LOGI(TAG, "MQTT Desuscrito, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:49:58: error: invalid type argument of '->' (have 'int')
+   49 |         ESP_LOGI(TAG, "MQTT Desuscrito, msg_id=%d", event->msg_id);
+      |                                                          ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:438:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  438 |         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:49:9: note: in expansion of macro 'ESP_LOGI'
+   49 |         ESP_LOGI(TAG, "MQTT Desuscrito, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:49:58: error: invalid type argument of '->' (have 'int')
+   49 |         ESP_LOGI(TAG, "MQTT Desuscrito, msg_id=%d", event->msg_id);
+      |                                                          ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:439:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  439 |         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:49:9: note: in expansion of macro 'ESP_LOGI'
+   49 |         ESP_LOGI(TAG, "MQTT Desuscrito, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:49:58: error: invalid type argument of '->' (have 'int')
+   49 |         ESP_LOGI(TAG, "MQTT Desuscrito, msg_id=%d", event->msg_id);
+      |                                                          ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:440:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  440 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:49:9: note: in expansion of macro 'ESP_LOGI'
+   49 |         ESP_LOGI(TAG, "MQTT Desuscrito, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:52:10: error: 'MQTT_EVENT_PUBLISHED' undeclared (first use in this function)
+   52 |     case MQTT_EVENT_PUBLISHED:
+      |          ^~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:53:65: error: invalid type argument of '->' (have 'int')
+   53 |         ESP_LOGI(TAG, "MQTT Mensaje publicado, msg_id=%d", event->msg_id);
+      |                                                                 ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:436:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:53:9: note: in expansion of macro 'ESP_LOGI'
+   53 |         ESP_LOGI(TAG, "MQTT Mensaje publicado, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:53:65: error: invalid type argument of '->' (have 'int')
+   53 |         ESP_LOGI(TAG, "MQTT Mensaje publicado, msg_id=%d", event->msg_id);
+      |                                                                 ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:437:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  437 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:53:9: note: in expansion of macro 'ESP_LOGI'
+   53 |         ESP_LOGI(TAG, "MQTT Mensaje publicado, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:53:65: error: invalid type argument of '->' (have 'int')
+   53 |         ESP_LOGI(TAG, "MQTT Mensaje publicado, msg_id=%d", event->msg_id);
+      |                                                                 ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:438:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  438 |         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:53:9: note: in expansion of macro 'ESP_LOGI'
+   53 |         ESP_LOGI(TAG, "MQTT Mensaje publicado, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:53:65: error: invalid type argument of '->' (have 'int')
+   53 |         ESP_LOGI(TAG, "MQTT Mensaje publicado, msg_id=%d", event->msg_id);
+      |                                                                 ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:439:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  439 |         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:53:9: note: in expansion of macro 'ESP_LOGI'
+   53 |         ESP_LOGI(TAG, "MQTT Mensaje publicado, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:53:65: error: invalid type argument of '->' (have 'int')
+   53 |         ESP_LOGI(TAG, "MQTT Mensaje publicado, msg_id=%d", event->msg_id);
+      |                                                                 ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:440:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  440 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:53:9: note: in expansion of macro 'ESP_LOGI'
+   53 |         ESP_LOGI(TAG, "MQTT Mensaje publicado, msg_id=%d", event->msg_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:56:10: error: 'MQTT_EVENT_DATA' undeclared (first use in this function)
+   56 |     case MQTT_EVENT_DATA:
+      |          ^~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:58:39: error: invalid type argument of '->' (have 'int')
+   58 |         printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
+      |                                       ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:58:57: error: invalid type argument of '->' (have 'int')
+   58 |         printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
+      |                                                         ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:59:38: error: invalid type argument of '->' (have 'int')
+   59 |         printf("DATA=%.*s\r\n", event->data_len, event->data);
+      |                                      ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:59:55: error: invalid type argument of '->' (have 'int')
+   59 |         printf("DATA=%.*s\r\n", event->data_len, event->data);
+      |                                                       ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:63:29: error: invalid type argument of '->' (have 'int')
+   63 |         strncpy(topic, event->topic, event->topic_len);
+      |                             ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:63:43: error: invalid type argument of '->' (have 'int')
+   63 |         strncpy(topic, event->topic, event->topic_len);
+      |                                           ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:64:28: error: invalid type argument of '->' (have 'int')
+   64 |         strncpy(data, event->data, event->data_len);
+      |                            ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:64:41: error: invalid type argument of '->' (have 'int')
+   64 |         strncpy(data, event->data, event->data_len);
+      |                                         ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:68:10: error: 'MQTT_EVENT_ERROR' undeclared (first use in this function)
+   68 |     case MQTT_EVENT_ERROR:
+      |          ^~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:70:18: error: invalid type argument of '->' (have 'int')
+   70 |         if (event->error_handle->error_type == MQTT_ERROR_TYPE_TCP_TRANSPORT) {
+      |                  ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:70:48: error: 'MQTT_ERROR_TYPE_TCP_TRANSPORT' undeclared (first use in this function)
+   70 |         if (event->error_handle->error_type == MQTT_ERROR_TYPE_TCP_TRANSPORT) {
+      |                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:71:61: error: invalid type argument of '->' (have 'int')
+   71 |             ESP_LOGI(TAG, "Error de transporte: 0x%x", event->error_handle->esp_tls_last_esp_err);
+      |                                                             ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:436:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:71:13: note: in expansion of macro 'ESP_LOGI'
+   71 |             ESP_LOGI(TAG, "Error de transporte: 0x%x", event->error_handle->esp_tls_last_esp_err);
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:71:61: error: invalid type argument of '->' (have 'int')
+   71 |             ESP_LOGI(TAG, "Error de transporte: 0x%x", event->error_handle->esp_tls_last_esp_err);
+      |                                                             ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:437:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  437 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:71:13: note: in expansion of macro 'ESP_LOGI'
+   71 |             ESP_LOGI(TAG, "Error de transporte: 0x%x", event->error_handle->esp_tls_last_esp_err);
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:71:61: error: invalid type argument of '->' (have 'int')
+   71 |             ESP_LOGI(TAG, "Error de transporte: 0x%x", event->error_handle->esp_tls_last_esp_err);
+      |                                                             ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:438:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  438 |         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:71:13: note: in expansion of macro 'ESP_LOGI'
+   71 |             ESP_LOGI(TAG, "Error de transporte: 0x%x", event->error_handle->esp_tls_last_esp_err);
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:71:61: error: invalid type argument of '->' (have 'int')
+   71 |             ESP_LOGI(TAG, "Error de transporte: 0x%x", event->error_handle->esp_tls_last_esp_err);
+      |                                                             ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:439:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  439 |         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:71:13: note: in expansion of macro 'ESP_LOGI'
+   71 |             ESP_LOGI(TAG, "Error de transporte: 0x%x", event->error_handle->esp_tls_last_esp_err);
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:71:61: error: invalid type argument of '->' (have 'int')
+   71 |             ESP_LOGI(TAG, "Error de transporte: 0x%x", event->error_handle->esp_tls_last_esp_err);
+      |                                                             ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:440:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  440 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:71:13: note: in expansion of macro 'ESP_LOGI'
+   71 |             ESP_LOGI(TAG, "Error de transporte: 0x%x", event->error_handle->esp_tls_last_esp_err);
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:72:57: error: invalid type argument of '->' (have 'int')
+   72 |             ESP_LOGI(TAG, "Error tls stack: 0x%x", event->error_handle->esp_tls_stack_err);
+      |                                                         ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:436:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:72:13: note: in expansion of macro 'ESP_LOGI'
+   72 |             ESP_LOGI(TAG, "Error tls stack: 0x%x", event->error_handle->esp_tls_stack_err);
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:72:57: error: invalid type argument of '->' (have 'int')
+   72 |             ESP_LOGI(TAG, "Error tls stack: 0x%x", event->error_handle->esp_tls_stack_err);
+      |                                                         ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:437:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  437 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:72:13: note: in expansion of macro 'ESP_LOGI'
+   72 |             ESP_LOGI(TAG, "Error tls stack: 0x%x", event->error_handle->esp_tls_stack_err);
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:72:57: error: invalid type argument of '->' (have 'int')
+   72 |             ESP_LOGI(TAG, "Error tls stack: 0x%x", event->error_handle->esp_tls_stack_err);
+      |                                                         ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:438:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  438 |         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:72:13: note: in expansion of macro 'ESP_LOGI'
+   72 |             ESP_LOGI(TAG, "Error tls stack: 0x%x", event->error_handle->esp_tls_stack_err);
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:72:57: error: invalid type argument of '->' (have 'int')
+   72 |             ESP_LOGI(TAG, "Error tls stack: 0x%x", event->error_handle->esp_tls_stack_err);
+      |                                                         ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:439:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  439 |         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:72:13: note: in expansion of macro 'ESP_LOGI'
+   72 |             ESP_LOGI(TAG, "Error tls stack: 0x%x", event->error_handle->esp_tls_stack_err);
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:72:57: error: invalid type argument of '->' (have 'int')
+   72 |             ESP_LOGI(TAG, "Error tls stack: 0x%x", event->error_handle->esp_tls_stack_err);
+      |                                                         ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:440:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  440 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:72:13: note: in expansion of macro 'ESP_LOGI'
+   72 |             ESP_LOGI(TAG, "Error tls stack: 0x%x", event->error_handle->esp_tls_stack_err);
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:65: error: invalid type argument of '->' (have 'int')
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |                                                                 ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:436:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:13: note: in expansion of macro 'ESP_LOGI'
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:74:36: error: invalid type argument of '->' (have 'int')
+   74 |                      strerror(event->error_handle->esp_transport_sock_errno));
+      |                                    ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:436:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:13: note: in expansion of macro 'ESP_LOGI'
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:65: error: invalid type argument of '->' (have 'int')
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |                                                                 ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:437:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  437 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:13: note: in expansion of macro 'ESP_LOGI'
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:74:36: error: invalid type argument of '->' (have 'int')
+   74 |                      strerror(event->error_handle->esp_transport_sock_errno));
+      |                                    ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:437:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  437 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:13: note: in expansion of macro 'ESP_LOGI'
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:65: error: invalid type argument of '->' (have 'int')
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |                                                                 ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:438:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  438 |         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:13: note: in expansion of macro 'ESP_LOGI'
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:74:36: error: invalid type argument of '->' (have 'int')
+   74 |                      strerror(event->error_handle->esp_transport_sock_errno));
+      |                                    ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:438:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  438 |         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:13: note: in expansion of macro 'ESP_LOGI'
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:65: error: invalid type argument of '->' (have 'int')
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |                                                                 ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:439:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  439 |         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:13: note: in expansion of macro 'ESP_LOGI'
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:74:36: error: invalid type argument of '->' (have 'int')
+   74 |                      strerror(event->error_handle->esp_transport_sock_errno));
+      |                                    ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:439:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  439 |         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:13: note: in expansion of macro 'ESP_LOGI'
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:65: error: invalid type argument of '->' (have 'int')
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |                                                                 ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:440:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  440 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:13: note: in expansion of macro 'ESP_LOGI'
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |             ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:74:36: error: invalid type argument of '->' (have 'int')
+   74 |                      strerror(event->error_handle->esp_transport_sock_errno));
+      |                                    ^~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:440:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  440 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:73:13: note: in expansion of macro 'ESP_LOGI'
+   73 |             ESP_LOGI(TAG, "Error captured errno: %d (%s)", event->error_handle->esp_transport_sock_errno,
+      |             ^~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:291:27: error: format '%d' expects argument of type 'int', but argument 6 has type 'int32_t' {aka 'long int'} [-Werror=format=]
+  291 | #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+      |                           ^~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:294:27: note: in expansion of macro 'LOG_COLOR'
+  294 | #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+      |                           ^~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:308:37: note: in expansion of macro 'LOG_COLOR_E'
+  308 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                     ^~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:436:86: note: in expansion of macro 'LOG_FORMAT'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:464:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  464 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:79:9: note: in expansion of macro 'ESP_LOGI'
+   79 |         ESP_LOGI(TAG, "Evento MQTT no manejado id:%d", event_id);
+      |         ^~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:291:27: error: format '%d' expects argument of type 'int', but argument 6 has type 'int32_t' {aka 'long int'} [-Werror=format=]
+  291 | #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+      |                           ^~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:295:27: note: in expansion of macro 'LOG_COLOR'
+  295 | #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+      |                           ^~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:308:37: note: in expansion of macro 'LOG_COLOR_W'
+  308 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                     ^~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:437:86: note: in expansion of macro 'LOG_FORMAT'
+  437 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:464:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  464 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:79:9: note: in expansion of macro 'ESP_LOGI'
+   79 |         ESP_LOGI(TAG, "Evento MQTT no manejado id:%d", event_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:79:1: error: format '%d' expects argument of type 'int', but argument 6 has type 'int32_t' {aka 'long int'} [-Werror=format=]
+   79 |         ESP_LOGI(TAG, "Evento MQTT no manejado id:%d", event_id);
+      | ^       ~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:308:59: note: in definition of macro 'LOG_FORMAT'
+  308 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:464:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  464 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:79:9: note: in expansion of macro 'ESP_LOGI'
+   79 |         ESP_LOGI(TAG, "Evento MQTT no manejado id:%d", event_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:79:1: error: format '%d' expects argument of type 'int', but argument 6 has type 'int32_t' {aka 'long int'} [-Werror=format=]
+   79 |         ESP_LOGI(TAG, "Evento MQTT no manejado id:%d", event_id);
+      | ^       ~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:308:59: note: in definition of macro 'LOG_FORMAT'
+  308 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                           ^~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:464:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  464 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:79:9: note: in expansion of macro 'ESP_LOGI'
+   79 |         ESP_LOGI(TAG, "Evento MQTT no manejado id:%d", event_id);
+      |         ^~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:291:27: error: format '%d' expects argument of type 'int', but argument 6 has type 'int32_t' {aka 'long int'} [-Werror=format=]
+  291 | #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+      |                           ^~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:296:27: note: in expansion of macro 'LOG_COLOR'
+  296 | #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+      |                           ^~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:308:37: note: in expansion of macro 'LOG_COLOR_I'
+  308 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                     ^~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:440:86: note: in expansion of macro 'LOG_FORMAT'
+  440 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:464:41: note: in expansion of macro 'ESP_LOG_LEVEL'
+  464 |         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                         ^~~~~~~~~~~~~
+/home/edwardv/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:79:9: note: in expansion of macro 'ESP_LOGI'
+   79 |         ESP_LOGI(TAG, "Evento MQTT no manejado id:%d", event_id);
+      |         ^~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c: In function 'mqtt_client_init':
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:85:5: error: unknown type name 'esp_mqtt_client_config_t'; did you mean 'esp_etm_channel_config_t'?
+   85 |     esp_mqtt_client_config_t mqtt_cfg = {
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+      |     esp_etm_channel_config_t
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:86:9: error: field name not in record or union initializer
+   86 |         .broker = {
+      |         ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:86:9: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:86:9: warning: braces around scalar initializer
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:86:9: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:87:13: error: field name not in record or union initializer
+   87 |             .address.uri = "mqtt://" MQTT_BROKER_HOST,
+      |             ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:87:13: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:87:28: warning: initialization of 'int' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+   87 |             .address.uri = "mqtt://" MQTT_BROKER_HOST,
+      |                            ^~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:87:28: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:88:13: error: field name not in record or union initializer
+   88 |             .address.port = MQTT_BROKER_PORT,
+      |             ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:88:13: note: (near initialization for 'mqtt_cfg')
+In file included from /home/edwardv/practices_iot/practices_1/main/sensor_manager.h:16,
+                 from /home/edwardv/practices_iot/practices_1/main/mqtt_client.h:14,
+                 from /home/edwardv/practices_iot/practices_1/main/mqtt_client.c:11:
+/home/edwardv/practices_iot/practices_1/main/config.h:20:26: warning: excess elements in scalar initializer
+   20 | #define MQTT_BROKER_PORT 1883
+      |                          ^~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:88:29: note: in expansion of macro 'MQTT_BROKER_PORT'
+   88 |             .address.port = MQTT_BROKER_PORT,
+      |                             ^~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/config.h:20:26: note: (near initialization for 'mqtt_cfg')
+   20 | #define MQTT_BROKER_PORT 1883
+      |                          ^~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:88:29: note: in expansion of macro 'MQTT_BROKER_PORT'
+   88 |             .address.port = MQTT_BROKER_PORT,
+      |                             ^~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:90:9: error: field name not in record or union initializer
+   90 |         .credentials = {
+      |         ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:90:9: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:90:9: warning: braces around scalar initializer
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:90:9: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:91:13: error: field name not in record or union initializer
+   91 |             .client_id = MQTT_CLIENT_ID,
+      |             ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:91:13: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/config.h:21:24: warning: initialization of 'int' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+   21 | #define MQTT_CLIENT_ID "esp32_devkit_c6_001"
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:91:26: note: in expansion of macro 'MQTT_CLIENT_ID'
+   91 |             .client_id = MQTT_CLIENT_ID,
+      |                          ^~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/config.h:21:24: note: (near initialization for 'mqtt_cfg')
+   21 | #define MQTT_CLIENT_ID "esp32_devkit_c6_001"
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:91:26: note: in expansion of macro 'MQTT_CLIENT_ID'
+   91 |             .client_id = MQTT_CLIENT_ID,
+      |                          ^~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:92:13: error: field name not in record or union initializer
+   92 |             .username = MQTT_USERNAME,
+      |             ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:92:13: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/config.h:22:23: warning: excess elements in scalar initializer
+   22 | #define MQTT_USERNAME "esp32_user"     // Usuario MQTT (configura en EC2)
+      |                       ^~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:92:25: note: in expansion of macro 'MQTT_USERNAME'
+   92 |             .username = MQTT_USERNAME,
+      |                         ^~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/config.h:22:23: note: (near initialization for 'mqtt_cfg')
+   22 | #define MQTT_USERNAME "esp32_user"     // Usuario MQTT (configura en EC2)
+      |                       ^~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:92:25: note: in expansion of macro 'MQTT_USERNAME'
+   92 |             .username = MQTT_USERNAME,
+      |                         ^~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:93:13: error: field name not in record or union initializer
+   93 |             .authentication.password = MQTT_PASSWORD,
+      |             ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:93:13: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/config.h:23:23: warning: excess elements in scalar initializer
+   23 | #define MQTT_PASSWORD "esp32_pass"     // Password MQTT (configura en EC2)
+      |                       ^~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:93:40: note: in expansion of macro 'MQTT_PASSWORD'
+   93 |             .authentication.password = MQTT_PASSWORD,
+      |                                        ^~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/config.h:23:23: note: (near initialization for 'mqtt_cfg')
+   23 | #define MQTT_PASSWORD "esp32_pass"     // Password MQTT (configura en EC2)
+      |                       ^~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:93:40: note: in expansion of macro 'MQTT_PASSWORD'
+   93 |             .authentication.password = MQTT_PASSWORD,
+      |                                        ^~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:90:24: warning: excess elements in scalar initializer
+   90 |         .credentials = {
+      |                        ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:90:24: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:95:9: error: field name not in record or union initializer
+   95 |         .session = {
+      |         ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:95:9: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:95:9: warning: braces around scalar initializer
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:95:9: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:96:13: error: field name not in record or union initializer
+   96 |             .last_will = {
+      |             ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:96:13: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:96:13: warning: braces around scalar initializer
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:96:13: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:97:17: error: field name not in record or union initializer
+   97 |                 .topic = MQTT_TOPIC_STATUS,
+      |                 ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:97:17: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/config.h:25:27: warning: initialization of 'int' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+   25 | #define MQTT_TOPIC_STATUS "esp32/dht11/status"
+      |                           ^~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:97:26: note: in expansion of macro 'MQTT_TOPIC_STATUS'
+   97 |                 .topic = MQTT_TOPIC_STATUS,
+      |                          ^~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/config.h:25:27: note: (near initialization for 'mqtt_cfg')
+   25 | #define MQTT_TOPIC_STATUS "esp32/dht11/status"
+      |                           ^~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:97:26: note: in expansion of macro 'MQTT_TOPIC_STATUS'
+   97 |                 .topic = MQTT_TOPIC_STATUS,
+      |                          ^~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:98:17: error: field name not in record or union initializer
+   98 |                 .msg = "offline",
+      |                 ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:98:17: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:98:24: warning: excess elements in scalar initializer
+   98 |                 .msg = "offline",
+      |                        ^~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:98:24: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:99:17: error: field name not in record or union initializer
+   99 |                 .qos = 1,
+      |                 ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:99:17: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:99:24: warning: excess elements in scalar initializer
+   99 |                 .qos = 1,
+      |                        ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:99:24: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:100:17: error: field name not in record or union initializer
+  100 |                 .retain = 1,
+      |                 ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:100:17: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:100:27: warning: excess elements in scalar initializer
+  100 |                 .retain = 1,
+      |                           ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:100:27: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:95:20: warning: excess elements in scalar initializer
+   95 |         .session = {
+      |                    ^
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:95:20: note: (near initialization for 'mqtt_cfg')
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:105:19: error: implicit declaration of function 'esp_mqtt_client_init'; did you mean 'mqtt_client_init'? [-Werror=implicit-function-declaration]
+  105 |     mqtt_client = esp_mqtt_client_init(&mqtt_cfg);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   mqtt_client_init
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:106:21: warning: comparison between pointer and integer
+  106 |     if (mqtt_client == NULL) {
+      |                     ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:111:5: error: implicit declaration of function 'esp_mqtt_client_register_event' [-Werror=implicit-function-declaration]
+  111 |     esp_mqtt_client_register_event(mqtt_client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:112:5: error: implicit declaration of function 'esp_mqtt_client_start' [-Werror=implicit-function-declaration]
+  112 |     esp_mqtt_client_start(mqtt_client);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c: In function 'mqtt_publish_sensor_data':
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:119:40: warning: comparison between pointer and integer
+  119 |     if (!mqtt_connected || mqtt_client == NULL) {
+      |                                        ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:138:55: error: 'MQTT_TOPIC_DATA' undeclared (first use in this function); did you mean 'MQTT_TOPIC_STATUS'?
+  138 |     int msg_id = esp_mqtt_client_publish(mqtt_client, MQTT_TOPIC_DATA,
+      |                                                       ^~~~~~~~~~~~~~~
+      |                                                       MQTT_TOPIC_STATUS
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c: In function 'mqtt_publish_status':
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:156:40: warning: comparison between pointer and integer
+  156 |     if (!mqtt_connected || mqtt_client == NULL) {
+      |                                        ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c: In function 'mqtt_client_deinit':
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:196:21: warning: comparison between pointer and integer
+  196 |     if (mqtt_client != NULL) {
+      |                     ^~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:197:9: error: implicit declaration of function 'esp_mqtt_client_destroy' [-Werror=implicit-function-declaration]
+  197 |         esp_mqtt_client_destroy(mqtt_client);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/edwardv/practices_iot/practices_1/main/mqtt_client.c:198:21: warning: assignment to 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+  198 |         mqtt_client = NULL;
+      |                     ^
+cc1: some warnings being treated as errors
+ninja: build stopped: subcommand failed.

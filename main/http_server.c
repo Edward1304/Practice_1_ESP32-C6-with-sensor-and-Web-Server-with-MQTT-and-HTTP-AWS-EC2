@@ -14,6 +14,8 @@
 #include "http_server.h"
 #include "esp_log.h"
 #include "esp_http_server.h"
+#include "esp_http_client.h"
+#include "esp_timer.h"
 #include "esp_spiffs.h"
 #include "cJSON.h"
 #include "sensor_manager.h"
@@ -73,7 +75,7 @@ static const char* get_mime_type(const char* filename) {
 
 // Handler para archivos estáticos
 static esp_err_t static_file_handler(httpd_req_t *req) {
-    char filepath[128];
+    char filepath[1024];
     const char *filename = req->uri;
     
     // Redirigir root a index.html

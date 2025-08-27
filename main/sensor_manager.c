@@ -14,6 +14,8 @@
 #include "sensor_manager.h"
 #include "esp_log.h"
 #include "driver/gpio.h"
+#include "esp_timer.h"
+#include "esp_rom_sys.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "cJSON.h"
@@ -38,9 +40,9 @@ static sensor_data_callback_t data_callback = NULL;
 static void dht11_send_start_signal(void) {
     gpio_set_direction(DHT11_GPIO_PIN, GPIO_MODE_OUTPUT);
     gpio_set_level(DHT11_GPIO_PIN, 0);
-    ets_delay_us(DHT11_START_SIGNAL_1);  // 18ms en bajo
+    esp_rom_delay_us(DHT11_START_SIGNAL_1);  // 18ms en bajo
     gpio_set_level(DHT11_GPIO_PIN, 1);
-    ets_delay_us(40);  // 40us en alto
+    esp_rom_delay_us(40);  // 40us en alto
     gpio_set_direction(DHT11_GPIO_PIN, GPIO_MODE_INPUT);
 }
 
@@ -48,7 +50,7 @@ static void dht11_send_start_signal(void) {
 static bool dht11_wait_for_signal(int level, int timeout_us) {
     int count = 0;
     while (gpio_get_level(DHT11_GPIO_PIN) != level) {
-        ets_delay_us(1);
+        esp_rom_delay_us(1);
         count++;
         if (count > timeout_us) {
             return false;
@@ -68,7 +70,7 @@ static int dht11_read_bit(void) {
     
     // Contar cuánto tiempo está en alto
     while (gpio_get_level(DHT11_GPIO_PIN) == 1) {
-        ets_delay_us(1);
+        esp_rom_delay_us(1);
         count++;
         if (count > 100) {
             return -1;
@@ -105,7 +107,6 @@ esp_err_t sensor_manager_init(void) {
 
 esp_err_t sensor_read_dht11(sensor_data_t *data) {
     uint8_t dht11_data[5] = {0};
-    int bit_index = 0;
     
     // Deshabilitar interrupciones durante la lectura crítica
     taskDISABLE_INTERRUPTS();

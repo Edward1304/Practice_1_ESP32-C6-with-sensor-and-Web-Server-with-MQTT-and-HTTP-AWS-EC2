@@ -1,11 +1,10 @@
 /*
  * Cliente MQTT para Comunicación con Mosquitto en AWS EC2
  * 
- * Autor: Edward Fabian Goyeneche Velandia
- * Universidad Nacional de Colombia - Sede Manizales
- * Grupo Percepción de Control Inteligente
- * Asignatura: Desarrollo de Sistemas IoT
- * Período: 2025-II
+ * Autor: Edwar David Valencia Gomez
+ * Universidad de Antioquia, Sistemas Embebidos
+ * Curso: Sistemas IoT
+ * Período: 2025-I
  */
 
 #ifndef MQTT_CLIENT_H
@@ -14,6 +13,7 @@
 #include "esp_err.h"
 #include "sensor_manager.h"
 #include "config.h"
+#include "mqtt_client.h"
 
 /**
  * @brief Inicializa el cliente MQTT

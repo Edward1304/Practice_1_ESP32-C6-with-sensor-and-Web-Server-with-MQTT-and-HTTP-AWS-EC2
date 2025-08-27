@@ -1,6 +1,6 @@
 # Configuración de MQTT con Amazon EC2
 
-**Autor:** Edward Fabian Goyeneche Velandia  
+**Autor:** Edward Fabian Goyeneche Velandia / Juan Sebastian Giraldo 
 **Universidad:** Universidad Nacional de Colombia - Sede Manizales  
 **Grupo:** Percepción de Control Inteligente  
 **Asignatura:** Desarrollo de Sistemas IoT  
@@ -8,11 +8,11 @@
 
 ---
 
-# Introduction
+# Introduccion
 
 Esta guía detalla la configuración completa de un servidor MQTT usando Amazon EC2 con Mosquitto para proyectos IoT. Incluye desde la creación de la instancia EC2 hasta la configuración del broker MQTT con autenticación.
 
-# Get Started
+# Inicio
 
 ## Amazon Web Services
 

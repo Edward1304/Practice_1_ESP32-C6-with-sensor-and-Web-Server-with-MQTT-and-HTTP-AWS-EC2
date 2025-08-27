@@ -9,6 +9,8 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include "driver/gpio.h"
+
 // WiFi Configuration
 #define WIFI_SSID "WIFI_SSID"
 #define WIFI_PASSWORD "WIFI_PASSWORD"
@@ -21,6 +23,7 @@
 #define MQTT_PASSWORD "esp32_pass"     // Password MQTT (configura en EC2)
 #define MQTT_TOPIC_SENSOR_DATA "esp32/dht11/data"
 #define MQTT_TOPIC_STATUS "esp32/dht11/status"
+#define MQTT_TOPIC_DATA   "esp32/dht11/data"
 
 // HTTP Server Configuration
 #define HTTP_SERVER_PORT 80
